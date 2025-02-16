@@ -35,10 +35,10 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class lastSeen {
+public class lastSeen extends Command {
     private static final Logger LOGGER = LoggerFactory.getLogger("breakthemod");
 
-    public static void register() {
+    public void register() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             LiteralArgumentBuilder<FabricClientCommandSource> command = LiteralArgumentBuilder
                 .<FabricClientCommandSource>literal("lastSeen")

@@ -35,10 +35,10 @@ import net.minecraft.util.math.Vec3d;
 import breakthemod.utils.Prefix;
 import net.minecraft.util.Identifier;
 
-public class nearby {
+public class nearby extends Command{
     private static final Logger LOGGER = LoggerFactory.getLogger("breakthemod");
 
-    public static void register() {
+    public void register() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             LiteralArgumentBuilder<FabricClientCommandSource> command = LiteralArgumentBuilder
                 .<FabricClientCommandSource>literal("nearby")

@@ -34,10 +34,10 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import java.util.concurrent.CompletableFuture;
 
-public class locate {
+public class locate extends Command {
     private static final Logger LOGGER = LoggerFactory.getLogger("breakthemod");
 
-    public static void register() {
+    public void register() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             dispatcher.register(LiteralArgumentBuilder
                     .<FabricClientCommandSource>literal("locate")

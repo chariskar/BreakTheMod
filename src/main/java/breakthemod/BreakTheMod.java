@@ -31,30 +31,25 @@ public class BreakTheMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         MinecraftClient client = MinecraftClient.getInstance();
-        if (client != null) {
-            // Register commands
-            nearby.register();
-            lastSeen.register();
-            locate.register();
-            coords.register();
-            discord.register();
-            staff.register();
-            townless.register();
-            whereIs.register();
-            GoTo.register();
-            help.register();
-            friends.register();
-
-            render Render = new render();
-            // Register a client tick event to call the update method regularly
-            if (client.getGameVersion().equals("1.20.4")){
-                HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
-                    Render.renderOverlay(drawContext, MinecraftClient.getInstance());
-                });
-            }
-        } else {
-            LOGGER.error("Minecraft client instance is null, cannot initialize commands.");
+        if (client == null) throw new IllegalStateException("Minecraft client is null");
+        registerCommands(
+                new GoTo(),
+                new nearby(),
+                new friends(),
+                new locate(),
+                new lastSeen(),
+                new help(),
+                new staff(),
+                new whereIs(),
+                new townless(),
+                new discord(),
+                new coords(),
+                new whereIs()
+        );
+    }
+    private void registerCommands(Command... commands){
+        for (Command command : commands){
+            command.register();
         }
     }
-
 }

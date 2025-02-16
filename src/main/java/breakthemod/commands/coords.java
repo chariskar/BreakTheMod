@@ -34,10 +34,11 @@ import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
 
-public class coords {
+public class coords extends Command {
     private static final Logger LOGGER = LoggerFactory.getLogger("breakthemod");
 
-    public static void register() {
+    @Override
+    public void register() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             LiteralArgumentBuilder<FabricClientCommandSource> command = LiteralArgumentBuilder
                 .<FabricClientCommandSource>literal("coords")

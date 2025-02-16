@@ -33,9 +33,9 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 
-public class whereIs {
+public class whereIs extends Command{
     private static final Logger LOGGER = LoggerFactory.getLogger("breakthemod");
-    public static void register() {
+    public void register() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             LiteralArgumentBuilder<FabricClientCommandSource> command = LiteralArgumentBuilder
                 .<FabricClientCommandSource>literal("whereIs")
