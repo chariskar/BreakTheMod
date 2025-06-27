@@ -1,3 +1,6 @@
+# **Notice**
+Repo has been moved to https://github.com/breakthebot/BreakTheMod
+
 # **BreakTheMod**
 ![Build Status](https://github.com/chariskar/breakthemod/actions/workflows/build.yml/badge.svg)
 ![BreakTheMod](/src/main/resources/assets//icon.png)
